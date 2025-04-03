@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link';
 import React from 'react'
 
 type JobCardProps = {
@@ -12,33 +13,36 @@ type JobCardProps = {
 }
 
 
-function JobCard({ postedAt, company, logo, logoBackground, position, location, contract }: JobCardProps) {
+function JobCard({ postedAt, company, logo, logoBackground, position, location, contract, id }: JobCardProps) {
   return (
-    <div className="flex flex-col justify-evenly bg-white dark:bg-very-dark-blue relative px-3 rounded-md py-6 gap-4">
+    <div className="relative flex flex-col gap-4 px-3 py-6 bg-white rounded-md justify-evenly dark:bg-very-dark-blue">
       <div style={
         {
           backgroundColor: logoBackground,
         }
-      } className="rounded-xl w-12 h-12 flex items-center justify-center absolute -top-6 left-4">
+      } className="absolute flex items-center justify-center w-12 h-12 rounded-xl -top-6 left-4">
         <Image src={logo} alt="logo" width={24} height={24} />
       </div>
 
       <div className="card-content">
-        <div className="flex gap-2 text-dark-gray mt-4">
+        <div className="flex gap-2 mt-4 text-dark-gray">
           <p>{postedAt}</p>
           <span className="text-2xl">&bull;</span>
           <p>{contract}</p>
         </div>
 
         <h3 className="font-bold text-very-dark-blue dark:text-white">
-          <a href="#">{position}</a>
+          <Link href={`/company/${id}`}>
+            {position}
+          </Link>
+
         </h3>
 
         <p className="text-dark-gray">{company}</p>
       </div>
 
 
-      <h4 className="justify-self-end font-bold text-violet">
+      <h4 className="font-bold justify-self-end text-violet">
         {location}
       </h4>
     </div>
