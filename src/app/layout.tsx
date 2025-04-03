@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import "./globals.css";
 import ThemeToggle from "@/components/ThemeToggle";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "DevJobs",
@@ -18,10 +19,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`antialiased bg-light-gray text-foreground dark:bg-midnight dark:text-white ease-in duration-200`}>
-        <div className="bg-header-pattern bg-cover bg-no-repeat w-full ">
+        <div className="w-full bg-no-repeat bg-cover bg-header-pattern ">
           <div className="w-full h-[162px] md:px-24 px-6 py-8">
-            <div className="flex h-full justify-between items-start">
-              <h1 className="text-4xl font-bold text-white p-0 m-0">devjobs</h1>
+            <div className="flex items-start justify-between h-full">
+              <Link href="/">
+                <h1 className="p-0 m-0 text-4xl font-bold text-white">devjobs</h1>
+              </Link>
               <ThemeToggle />
             </div>
             {children}
