@@ -9,6 +9,7 @@
 
   --violet: #5964e0;
   --light-violet: #939bf4;
+  --light-violet-100: #eeeffc;
   --very-dark-blue: #19202d;
   --midnight: #121721;
   --light-gray: #f4f6f8;
@@ -20,26 +21,32 @@
   h1 {
     font-size: 28px;
     line-height: 34px;
+
+    color: var(--foreground);
   }
 
   h2 {
     font-size: 24px;
     line-height: 29px;
+    color: var(--foreground);
   }
 
   h3 {
     font-size: 20px;
     line-height: 24px;
+    color: var(--foreground);
   }
 
   h4 {
     font-size: 14px;
     line-height: 18px;
+    color: var(--foreground);
   }
 
   p {
     font-size: 16px;
     line-height: 24px;
+    color: var(--dark-gray);
   }
 }
 
