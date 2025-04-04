@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import "./globals.css";
-import ThemeToggle from "@/components/ThemeToggle";
+import ThemeToggle from "@/components/Shared/ThemeToggle";
 import Link from "next/link";
 
 export const metadata: Metadata = {
