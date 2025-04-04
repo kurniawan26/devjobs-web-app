@@ -23,7 +23,7 @@ const ThemeToggle = () => {
   };
 
   return (
-    <div className="flex justify-center items-center gap-3">
+    <div className="flex items-center justify-center gap-3">
       <Image
         alt='theme icon'
         src={'/assets/desktop/icon-sun.svg'}
