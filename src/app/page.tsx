@@ -1,12 +1,12 @@
 'use client';
-import JobCard from "@/components/JobCard";
-import SearchBar from "@/components/SearchBar";
+import JobCard from "@/components/Pages/HomePage/JobCard";
+import ModalFilter from "@/components/Pages/HomePage/ModalFilter";
+import SearchBar from "@/components/Pages/HomePage/SearchBar";
 import useFilterJobStore from "@/state/useFilterJob";
 import { useEffect } from "react";
 
 export default function Home() {
   const { job: dataJob } = useFilterJobStore();
-
 
   useEffect(() => {
     document.documentElement.classList.toggle(
@@ -20,11 +20,12 @@ export default function Home() {
   return (
     <>
       <SearchBar />
-      <div className="grid md:mt-28 mt-8 gap-16 sm:gap-x-4 sm:gap-y2 sm:grid-cols-2 md:grid-cols-3">
+      <div className="grid gap-16 mt-8 md:mt-28 sm:gap-x-4 sm:gap-y2 sm:grid-cols-2 md:grid-cols-3">
         {dataJob.map(job => {
           return <JobCard key={job.id} {...job} />
         })}
       </div>
+      <ModalFilter />
     </>
   );
 }
